@@ -10,17 +10,17 @@ const runV1 = require("./routes/v1/run");
 
 const port = process.env.PORT || 5000;
 
-mongoose.connect("mongodb://127.0.0.1:27017/phy-con-api", {
-    useNewUrlParser: true,
-    useFindAndModify: false,
-    useCreateIndex: true
-});
-
-// mongoose.connect("mongodb://phycon:phycon123@ds041032.mlab.com:41032/phy-con", {
+// mongoose.connect("mongodb://127.0.0.1:27017/phy-con-api", {
 //     useNewUrlParser: true,
 //     useFindAndModify: false,
 //     useCreateIndex: true
 // });
+
+mongoose.connect("mongodb://phycon:phycon123@ds041032.mlab.com:41032/phy-con", {
+    useNewUrlParser: true,
+    useFindAndModify: false,
+    useCreateIndex: true
+});
 
 app.use(bodyParser.json({
     limit: '50mb'
