@@ -137,6 +137,10 @@ router.post("/", [
 	check('email', 'Email is required.').not().isEmpty(),
 	check('firstName', 'First Name is required.').not().isEmpty(),
 	check('lastName', 'Last Name is required.').not().isEmpty(),
+	check('phone', 'Phone is required.').not().isEmpty(),
+	check('age', 'Age is required.').not().isEmpty(),
+	check('weight', 'Weight is required.').not().isEmpty(),
+	check('height', 'Height is required.').not().isEmpty(),
 	check('lat', 'Latitude is required.').not().isEmpty(),
 	check('lng', 'Longitude is required.').not().isEmpty(),
 ], (req, res) => {
@@ -146,6 +150,7 @@ router.post("/", [
 		email: req.body.email,
 		firstName: req.body.firstName,
 		lastName: req.body.lastName,
+		phone: req.body.phone,
 		age: req.body.age,
 		weight: req.body.weight,
 		height: req.body.height,

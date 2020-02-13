@@ -42,6 +42,23 @@ router.get("/", (req, res) => {
     });
 });
 
+router.get("/:id", (req, res) => {
+	Run.find({userId: req.params.id}).sort({ createdAt: -1 }).exec((err, user) => {
+		if (err) {
+			res.json({
+				error: true,
+				message: err.message
+			})
+		} else {
+			res.json({
+				error: false,
+				message: user
+				// authData: req.authData
+			})
+		}
+	});
+});
+
 router.post(
   "/",
   [
